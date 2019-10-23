@@ -1,18 +1,11 @@
 import React from "react";
 import API from "../../util/API"
-var friends = 0;
 
 class Discover extends React.Component{
   state = {
     dog: {},
   };
 
-  matchDog = () => {
-    var matcha = Math.floor(Math.random(5))+1;
-    if (matcha == 3) {
-    this.setState({ friends: this.state.friends+1});
-    }
-  }
 
  componentDidMount() {
   API.search("/breeds/image/random").then(data => {
